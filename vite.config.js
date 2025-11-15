@@ -7,7 +7,15 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/*.png'],
+
+      // All files VitePWA should copy & cache offline
+      includeAssets: [
+        'favicon.ico',
+        'apple-touch-icon.png',
+        'icons/*.png',
+        'logo.png'             // <-- Added logo so it loads offline
+      ],
+
       manifest: {
         name: 'EasyMarket - Offline Shopping List',
         short_name: 'EasyMarket',
@@ -16,12 +24,21 @@ export default defineConfig({
         theme_color: '#1d4ed8',
         background_color: '#ffffff',
         icons: [
-          { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' }
+          {
+            src: '/icons/icon-192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/icons/icon-512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
         ]
       },
+
       workbox: {
-        // Increase the limit to 5 MiB (5 * 1024 * 1024 bytes)
+        // Allow large CSS/JS files to be cached
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
       }
     })
