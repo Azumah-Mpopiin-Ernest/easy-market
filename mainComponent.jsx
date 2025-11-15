@@ -1,5 +1,4 @@
 import { useState } from "react"
-import logo from "/logo.png"
 import { nanoid } from "nanoid"
 import { useEffect } from "react"
 export default function MainComponent(){
@@ -501,7 +500,7 @@ function shareList() {
         <footer className="bg-yellow-500 text-white flex flex-col ">
         <div className="flex justify-between items-center ">
 
-        <img src={logo} alt="logo" className="w-40 h-40 m-0"/>
+        <img src="/logo.png" alt="logo" className="w-40 h-40 m-0"/>
                     
         <span className="mr-4 cursor-pointer">
         Enjoy the market!
