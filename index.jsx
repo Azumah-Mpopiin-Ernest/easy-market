@@ -6,3 +6,13 @@ root.render(
     <App />
 )
 
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')  // vite-plugin-pwa generates sw.js
+      .then(reg => console.log('SW registered', reg))
+      .catch(err => console.log('SW registration failed', err))
+  })
+}
+
