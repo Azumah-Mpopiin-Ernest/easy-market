@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Title -->
     <title>EasyMarket</title>
 
     <!-- Fonts -->
@@ -24,7 +23,7 @@
     <!-- Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Theme Color for Mobile Browsers -->
+    <!-- Theme Color -->
     <meta name="theme-color" content="#1d4ed8" />
   </head>
 
@@ -38,7 +37,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
+          // VitePWA generates sw.js
+          navigator.serviceWorker.register('/sw.js')
             .then(reg => console.log('Service Worker registered', reg))
             .catch(err => console.error('Service Worker registration failed', err));
         });
