@@ -9,9 +9,9 @@ export default function MainComponent(){
     return savedSelected ? JSON.parse(savedSelected) : []
 })
 
-    const [itemName, setItemName] = useState()
-    const [price, setPrice] = useState()
-    const [quantity, setQuantity] = useState()
+    const [itemName, setItemName] = useState("")
+    const [price, setPrice] = useState("")
+    const [quantity, setQuantity] = useState("")
     const [list, setList] = useState(() => {
         const savedList = localStorage.getItem("basket-items")
         return savedList ? JSON.parse(savedList) : []
@@ -122,8 +122,8 @@ useEffect(() => {
         setList(prev => [
             {
                 name: itemName,
-                price: price,
-                quantity: quantity,
+                price: Number(price),
+                quantity: Number(quantity),
                 id: nanoid()
             },
             ...prev
@@ -185,10 +185,10 @@ useEffect(() => {
                 </div>
                 </div>
                 
-                {selectedItem.includes(item.id) ? <span onClick={() => handleCheck(item.id)} class="material-symbols-outlined  cursor-pointer text-green-600 ">
+                {selectedItem.includes(item.id) ? <span onClick={() => handleCheck(item.id)} className="material-symbols-outlined  cursor-pointer text-green-600 ">
                 check_circle
                 </span> :
-                <span class="material-symbols-outlined  cursor-pointer text-blue-600" onClick={() => handleCheck(item.id)}>
+                <span className="material-symbols-outlined  cursor-pointer text-blue-600" onClick={() => handleCheck(item.id)}>
                 radio_button_unchecked
                 </span>
                 }
@@ -401,23 +401,9 @@ function shareList() {
                 >Empty Basket</button>
 
                 {removeAllItemsPopup && 
-                <div 
-                className="flex 
-                flex-col 
-                items-center 
-                justify-center
-                gap-10
-                absolute 
-                w-80
-                h-40
-                right-10 
-                bottom-20
-                bg-blue-600
-                rounded-lg
-                z-50
-                animate-fadeOut
-                
-                ">
+  <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
+    <div className="flex flex-col items-center justify-center gap-6 bg-blue-600 rounded-lg w-80 max-w-[90%] h-40 p-4 animate-fadeIn">
+
                     <h3 className="text-yellow-100">Are you sure you want to empty Basket?</h3>
                     <div className="flex items-center justify-center gap-10">
                         <button 
@@ -429,6 +415,7 @@ function shareList() {
                         onClick={toggleRemoveAllItemsPopup}
                         >Return</button>
                     </div>
+                </div>
                 </div>
                 }
                 </div>
@@ -451,9 +438,11 @@ function shareList() {
 
 
        {showInstallPopup && !isInStandalone && (
+        <div className="fixed bottom-4 inset-x-0 flex justify-center z-50"
+        style={{fontFamily: "Poppins, sans-serif"}}
+        >
   <div 
-    className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white border shadow-xl rounded-xl p-4 w-80 z-50"
-    style={{fontFamily: "Poppins, sans-serif"}}
+    className="bg-white border shadow-xl rounded-xl p-4 w-80 max-w-[90%]"
   >
     <h3 className="text-lg font-semibold text-center mb-2">Install EasyMarket</h3>
 
@@ -504,6 +493,7 @@ function shareList() {
       ×
     </button>
   </div>
+  </div>
 )}
 
 
@@ -513,7 +503,7 @@ function shareList() {
 
         <img src={logo} alt="logo" className="w-40 h-40 m-0"/>
                     
-        <span class="mr-4 cursor-pointer">
+        <span className="mr-4 cursor-pointer">
         Enjoy the market!
         </span>
 
