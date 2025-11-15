@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { nanoid } from "nanoid"
 import { useEffect } from "react"
-import logo from "/logo.png"
+import logo from "./src/assets/logo.png"
 export default function MainComponent(){
 
     const [selectedItem, setSelectedItem] = useState(() => {
@@ -255,6 +255,7 @@ function downloadList() {
     a.click()
 
     URL.revokeObjectURL(url)
+    showAlert("Basket successfully downloaded!", "success")
 }
 
 
@@ -513,6 +514,4 @@ function shareList() {
        
         </>
     )
-
 }
-

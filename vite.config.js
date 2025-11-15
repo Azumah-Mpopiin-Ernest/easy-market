@@ -10,11 +10,12 @@ export default defineConfig({
 
       // All files VitePWA should copy & cache offline
       includeAssets: [
-        'favicon.ico',
-        'apple-touch-icon.png',
-        'icons/*.png',
-        'logo.png'             // <-- Added logo so it loads offline
-      ],
+  'favicon.ico',
+  'apple-touch-icon.png',
+  'icons/*.png',
+  'src/assets/logo.png'  // <-- make sure path matches import
+],
+
 
       manifest: {
         name: 'EasyMarket - Offline Shopping List',

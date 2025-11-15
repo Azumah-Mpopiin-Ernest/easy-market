@@ -1,4 +1,4 @@
-import logo from "/logo.png"
+import logo from "./src/assets/logo.png"
 import MainComponent from "./mainComponent"
 export default function App(){
 
