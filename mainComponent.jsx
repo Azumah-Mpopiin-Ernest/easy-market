@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { nanoid } from "nanoid"
 import { useEffect } from "react"
-import logo from "./src/assets/logo.png"
+import logo from "/logo.png"
 export default function MainComponent(){
 
     const [selectedItem, setSelectedItem] = useState(() => {
