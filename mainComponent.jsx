@@ -1,5 +1,5 @@
 import { useState } from "react"
-import logo from "../icons/logo.png"
+import logo from "./logo.png"
 import { nanoid } from "nanoid"
 import { useEffect } from "react"
 export default function MainComponent(){
