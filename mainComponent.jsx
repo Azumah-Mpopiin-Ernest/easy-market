@@ -255,7 +255,6 @@ function downloadList() {
     a.click()
 
     URL.revokeObjectURL(url)
-    showAlert("Basket successfully downloaded!", "success")
 }
 
 
@@ -516,3 +515,4 @@ function shareList() {
     )
 
 }
+
