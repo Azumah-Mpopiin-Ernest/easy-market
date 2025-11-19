@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,10 @@
     <title>EasyMarket</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
 
     <!-- Styles -->
     <link rel="stylesheet" href="index.css" />
@@ -18,7 +21,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="EasyMarket" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
     <!-- Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
@@ -27,7 +33,7 @@
     <meta name="theme-color" content="#1d4ed8" />
   </head>
 
-  <body style="margin: 0; padding: 0; background-color: #F6EBC1;">
+  <body style="margin: 0; padding: 0; background-color: #f6ebc1">
     <div id="root"></div>
 
     <!-- React App -->
@@ -35,12 +41,15 @@
 
     <!-- Service Worker Registration -->
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
           // VitePWA generates sw.js
-          navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('Service Worker registered', reg))
-            .catch(err => console.error('Service Worker registration failed', err));
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("Service Worker registered", reg))
+            .catch((err) =>
+              console.error("Service Worker registration failed", err)
+            );
         });
       }
     </script>
