@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import MainComponent from "./mainComponent";
 export default function App() {
   return (
